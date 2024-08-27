@@ -1,0 +1,87 @@
+.label {
+	display: flex;
+	flex-direction: column;
+	width: 40px;
+	cursor: pointer;
+}
+
+.spanPinned {
+	background: #fff;
+	border-radius: 10px;
+	height: 3px;
+	margin: 3px 0;
+	transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.spanPinned:nth-of-type(1) {
+	width: 50%;
+}
+
+.spanPinned:nth-of-type(2) {
+	width: 100%;
+}
+
+.spanPinned:nth-of-type(3) {
+	width: 75%;
+}
+
+.checkbox {
+	display: none;
+}
+
+.checkbox:checked ~ .spanPinned:nth-of-type(1) {
+	transform-origin: bottom;
+	transform: rotateZ(45deg) translate(4px, -1px);
+}
+
+.checkbox:checked ~ .spanPinned:nth-of-type(2) {
+	transform-origin: top;
+	transform: rotateZ(-45deg);
+}
+
+.checkbox:checked ~ .spanPinned:nth-of-type(3) {
+	transform-origin: bottom;
+	width: 53%;
+	transform: translate(17px, -3px) rotateZ(45deg);
+}
+
+/* ------------------------------------------------------ */
+
+.spanUnpinned {
+	background: #000 !important;
+	border-radius: 15px;
+	height: 3px;
+	margin: 3px 0;
+	transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+.spanUnpinned:nth-of-type(1) {
+	width: 50%;
+}
+
+.spanUnpinned:nth-of-type(2) {
+	width: 100%;
+}
+
+.spanUnpinned:nth-of-type(3) {
+	width: 75%;
+}
+
+.checkbox {
+	display: none;
+}
+
+.checkbox:checked ~ .spanUnpinned:nth-of-type(1) {
+	transform-origin: bottom;
+	transform: rotateZ(45deg) translate(4px, -1px);
+}
+
+.checkbox:checked ~ .spanUnpinned:nth-of-type(2) {
+	transform-origin: top;
+	transform: rotateZ(-45deg);
+}
+
+.checkbox:checked ~ .spanUnpinned:nth-of-type(3) {
+	transform-origin: bottom;
+	width: 53%;
+	transform: translate(17px, -3px) rotateZ(45deg);
+}

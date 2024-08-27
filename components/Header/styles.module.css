@@ -1,0 +1,121 @@
+.segaSolar {
+	transition: width 0.3s ease 0s, left 0.3s ease 0s;
+}
+.segaSolarFilter {
+	filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7475%)
+		hue-rotate(130deg) brightness(107%) contrast(112%);
+}
+.navItems {
+	text-transform: uppercase;
+	align-items: center;
+}
+
+.navLink {
+	color: #000;
+}
+
+.hoverUnderlineAnimation {
+	display: inline-block;
+	position: relative;
+}
+.hoverUnderlineAnimation:after {
+	background: none repeat scroll 0 0 transparent;
+	bottom: 0;
+	content: "";
+	display: block;
+	height: 1.5px;
+	left: 50%;
+	position: absolute;
+	background: #ffd401;
+	transition: width 0.3s ease 0s, left 0.3s ease 0s;
+	width: 0;
+}
+.hoverUnderlineAnimation:hover:after {
+	width: 100%;
+	left: 0;
+}
+
+.hamburgerMenu {
+	display: none !important;
+}
+
+@media (max-width: 1200px) {
+	.segaSolar {
+		width: 200px;
+	}
+	.hamburgerMenu {
+		display: flex !important;
+	}
+
+	@media (max-width: 768px) {
+		.segaSolar {
+			height: 50px;
+			width: 150px;
+		}
+	}
+
+	.dropdownMenu {
+		padding: 1em;
+	}
+
+	.mobileMenu {
+		background-color: #ffffff;
+		height: 100%;
+		left: 0;
+		overflow: hidden;
+		pointer-events: none;
+		position: fixed;
+		top: 6.5rem;
+		transition: 0.1s cubic-bezier(0.29, 0.13, 0.27, 0.74);
+		visibility: hidden;
+		width: 100%;
+		z-index: 8;
+	}
+
+	.mobileMenu.open {
+		height: 100%;
+		pointer-events: all;
+		visibility: visible;
+		background-color: #ffffff;
+	}
+	.navItems {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.navItems > li {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.navItems > li > a {
+		padding: 1em;
+	}
+}
+
+.navbarDefault {
+	transition: top 0.3s;
+	top: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+	transition: 0.2s cubic-bezier(0.29, 0.13, 0.27, 0.74);
+}
+.navbarTop {
+	background-color: transparent !important;
+}
+
+.navbarOpen {
+	background-color: #ffffff !important;
+}
+.visible {
+	background-color: #ffffff;
+}
+
+.hidden {
+	top: -1000px; /* Navbar'ın gizlenmesini sağlar */
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+}
