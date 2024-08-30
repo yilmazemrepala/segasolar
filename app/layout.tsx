@@ -16,7 +16,12 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={inter.className} style={{ margin: 0, padding: 0 }}>
+			<body
+				style={{
+					margin: 0,
+					padding: 0,
+					fontFamily: "Neue Haas Grotesk Display Pro, sans-serif",
+				}}>
 				{children}
 			</body>
 		</html>

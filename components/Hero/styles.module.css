@@ -1,0 +1,54 @@
+.swiperBar {
+	height: 100vh;
+}
+
+.swiperImageBar {
+	height: 100%; /* SwiperSlide içeriğinin tüm yüksekliğini kaplaması */
+	display: flex;
+	justify-content: center; /* Yatayda merkezler */
+	align-items: center; /* Dikeyde merkezler */
+	position: relative; /* İçeriği konumlandırmak için */
+}
+
+.sliderContent {
+	position: absolute; /* İçeriğin belirli bir yere yerleşmesi için */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center; /* Metin içeriğini ortalar */
+	z-index: 2; /* Overlay katmanından üstte görünmesi için */
+}
+
+.sliderTitle {
+	font-weight: 600;
+	font-size: 2.5rem;
+	line-height: 1em;
+	color: #fff;
+	text-align: center;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5); /* Siyah ve yarı saydam karartma */
+	z-index: 1; /* İçerikten önce gelmesi için */
+}
+
+@media (max-width: 991px) {
+	.swiperBar {
+		height: 50vh !important;
+	}
+
+	@media (max-width: 768px) {
+		/* .swiperBar {
+			height: 40vh !important;
+		} */
+		.sliderTitle {
+			font-size: 2rem;
+		}
+	}
+}

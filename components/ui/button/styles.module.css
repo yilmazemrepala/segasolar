@@ -50,3 +50,19 @@
 	opacity: 0;
 	transition: opacity 0.3s ease;
 }
+
+@media (max-width: 991px) {
+	.compBtn {
+		padding: 0.5 1rem !important;
+		font-weight: 300 !important;
+	}
+	.compBtnTxt {
+		font-size: 1em !important;
+	}
+
+	@media (max-width: 768px) {
+		.compBtnTxt {
+			font-size: 0.75em !important;
+		}
+	}
+}

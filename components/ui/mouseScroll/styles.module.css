@@ -1,0 +1,45 @@
+.mouseIcon {
+	position: relative;
+	bottom: 200px;
+	z-index: 3;
+	width: 25px;
+	height: 40px;
+	border: 2px solid #ffffff;
+	border-radius: 50px;
+}
+
+.mouseIcon::after {
+	position: absolute;
+	top: 7px;
+	left: 7px;
+	width: 8px;
+	height: 10px;
+	content: "";
+	background-color: #ffd401;
+	left: calc(50% -10px);
+	border-radius: 10px;
+	animation: mouse 2s infinite;
+}
+
+.mouseScroll {
+	position: absolute;
+	top: 0;
+}
+
+@media (max-width: 991px) {
+	.mouseIcon {
+		bottom: 111px !important;
+		z-index: 3;
+	}
+}
+
+@keyframes mouse {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+		top: 25px;
+	}
+}

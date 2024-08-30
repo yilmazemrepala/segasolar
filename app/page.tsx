@@ -1,21 +1,19 @@
+"use client";
 import React from "react";
-import urfa from "@/images/1689257056_urfa-hava-05-01.jpg";
-import Image from "next/image";
 import Header from "@/components/Header/Navbar";
+import Hero from "@/components/Hero/Hero";
+import About from "@/components/About/About";
+import Projects from "@/components/Projects/Projects";
+import Footer from "@/components/Footer/Footer";
 
 function Page() {
 	return (
 		<div>
 			<Header />
-			<div style={{ position: "absolute", height: "100vh", width: "100%" }}>
-				<Image
-					src={urfa}
-					layout="fill" // Resmi alanı tamamen kaplamasını sağlamak için
-					objectFit="cover" // Resmin kapsanmasını sağlamak için
-					alt="Urfa Hava"
-				/>
-			</div>
-			<div style={{ height: "3000px" }}>s</div>
+			<Hero />
+			<About />
+			<Projects limit={6} />
+			<Footer />
 		</div>
 	);
 }

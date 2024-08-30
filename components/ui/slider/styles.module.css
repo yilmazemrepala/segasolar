@@ -1,0 +1,55 @@
+.heroBottomSlider {
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+}
+
+.roundedFull {
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.heroBottomSliderBar {
+	margin-right: 50px;
+}
+
+.heroBottomFlagSlider {
+	position: relative;
+	z-index: 3;
+	top: -140px;
+}
+
+@media (max-width: 991px) {
+	.heroBottomFlagSlider {
+		top: -100px;
+	}
+}
+
+.tooltip {
+	position: absolute;
+	bottom: 110%;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #333;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 4px;
+	white-space: nowrap;
+	z-index: 10;
+	font-size: 14px;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.SwiperSlide:hover .tooltip {
+	opacity: 1;
+}
+
+/* styles.module.css */
+.tooltipCustom {
+	background-color: #fff !important;
+	border-radius: 5px;
+	padding: 5px 10px;
+	font-size: 14px;
+}
