@@ -10,16 +10,13 @@ import ButtonComponent from "@/components/ui/button/ButtonComponent";
 import useScroll from "@/hooks/useScroll";
 import HamburgerMenu from "../ui/hamburgerMenu/HamburgerMenu";
 
-const Header = () => {
+const NavbarAccommodation = ({ isAtTop = false }) => {
+	// Default değeri false olarak ayarladık
 	const [isOpen, setIsOpen] = useState(false);
-	const { isVisible, isAtTop } = useScroll();
+	const { isVisible } = useScroll();
 
 	useEffect(() => {
-		if (isOpen) {
-			document.body.style.overflow = "hidden";
-		} else {
-			document.body.style.overflow = "";
-		}
+		document.body.style.overflow = isOpen ? "hidden" : "";
 	}, [isOpen]);
 
 	const toggle = () => {
@@ -51,7 +48,7 @@ const Header = () => {
                 ${isVisible ? style.visible : style.hidden} 
                 ${isAtTop ? style.navbarTop : ""}
 				${isOpen ? style.navbarOpen : ""}`}>
-				<NavbarBrand>
+				<NavbarBrand tag={Link} href="/">
 					<Image
 						src="https://yilmazbackend.online/wordpress/wp-content/uploads/2024/08/sega-logo%20(1).svg"
 						width={300}
@@ -60,16 +57,14 @@ const Header = () => {
 						color="white"
 						className={`${style.segaSolar} ${
 							isAtTop && !isOpen ? style.segaSolarFilter : ""
-						}
-						`}
+						}`}
 					/>
 				</NavbarBrand>
 				<HamburgerMenu onClick={toggle} className={`${style.hamburgerMenu}`} />
 				<Collapse
 					isOpen={isOpen}
 					navbar
-					className={`${style.mobileMenu} ${isOpen ? style.open : ""}`}
-					id="">
+					className={`${style.mobileMenu} ${isOpen ? style.open : ""}`}>
 					<Nav className={`${style.navItems} ms-auto`}>
 						<NavItem>
 							<DropdownButton
@@ -91,7 +86,7 @@ const Header = () => {
 							/>
 
 							<Link
-								href="#"
+								href="/projects"
 								className={`nav-link ${style.navLink} ${
 									style.hoverUnderlineAnimation
 								} ${isVisible ? "text-dark" : ""}
@@ -103,8 +98,7 @@ const Header = () => {
 								className={`nav-link ${style.navLink} ${
 									style.hoverUnderlineAnimation
 								} ${isVisible ? "text-dark" : ""}
-                                  ${isAtTop && !isOpen ? "text-white" : ""}
-                                `}>
+                                  ${isAtTop && !isOpen ? "text-white" : ""}`}>
 								Media
 							</Link>
 
@@ -113,8 +107,7 @@ const Header = () => {
 								className={`nav-link ${style.navLink} ${
 									style.hoverUnderlineAnimation
 								} ${isVisible ? "text-dark" : ""}
-                                  ${isAtTop && !isOpen ? "text-white" : ""}
-                                `}>
+                                  ${isAtTop && !isOpen ? "text-white" : ""}`}>
 								Contact
 							</Link>
 							<ButtonComponent
@@ -131,4 +124,4 @@ const Header = () => {
 	);
 };
 
-export default Header;
+export default NavbarAccommodation;

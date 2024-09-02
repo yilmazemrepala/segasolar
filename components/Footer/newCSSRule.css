@@ -1,0 +1,8 @@
+@media (max-width: 991px) {
+	.row > * {
+		width: 100%;
+	}
+}
+body {
+	overflow-x: hidden;
+}
