@@ -1,0 +1,52 @@
+.breadcrumb {
+	margin: 10em 0;
+	position: relative;
+	z-index: 4;
+}
+
+.gradientTitle {
+	display: flex; /* Flexbox ile içerikleri hizala */
+	flex-direction: row;
+	width: 100%;
+}
+
+.gradientTitle > h2 {
+	-webkit-text-fill-color: transparent;
+	background: linear-gradient(90.08deg, #173d70 0.07%, #108dcd 60.94%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	z-index: 1;
+	font-weight: 900;
+	font-size: 40px; /* Ekran boyutuna göre değiştirilebilir */
+	width: 100%; /* Genişliği tam yap */
+	max-width: 300px; /* Maksimum genişlik ayarı */
+}
+
+.breadcrumbList {
+	display: flex;
+	flex-direction: row;
+}
+.breadcrumbItems {
+	margin-bottom: 2em;
+}
+.breadcrumbItems > a {
+	text-decoration: none;
+	font-size: 1.2rem;
+	color: #000;
+}
+
+/* Medya sorguları ile responsive tasarım */
+@media (max-width: 768px) {
+	.gradientTitle > h2 {
+		font-size: 30px; /* Küçük ekranlarda daha küçük başlık */
+	}
+}
+
+@media (max-width: 480px) {
+	.breadcrumbStructre {
+		margin-top: 5em; /* Küçük ekranlarda üst boşluğu azalt */
+	}
+	.gradientTitle > h2 {
+		font-size: 24px; /* Daha da küçült */
+	}
+}

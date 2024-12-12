@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Header from "@/components/Header/Navbar";
+import Header from "@/components/Header/HomeNavbar";
 import Hero from "@/components/Hero/Hero";
 import About from "@/components/About/About";
 import Projects from "@/components/Projects/Projects";

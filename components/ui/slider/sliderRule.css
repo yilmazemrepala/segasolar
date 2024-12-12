@@ -22,3 +22,7 @@
 .swiper-wrapper {
 	width: 50px !important;
 }
+
+body {
+	overflow-x: hidden;
+}
